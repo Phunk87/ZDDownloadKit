@@ -1,0 +1,38 @@
+//
+//  ZDDownloadManager.h
+//  ZDDwonloadKit
+//
+//  Created by Oneday on 13-1-22.
+//  Copyright (c) 2013年 0day. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "ZDDownloadOperation.h"
+#import "ZDDownloadTask.h"
+
+@interface ZDDownloadManager : NSObject
+
+@property (nonatomic, assign) NSUInteger maxConcurrentDownloadingCount;
+@property (nonatomic, readonly) NSUInteger downloadTaskCount;
+
++ (ZDDownloadManager *)defaultManager;
+
+// Add
+- (void)addTask:(ZDDownloadTask *)task startImmediately:(BOOL)start;
+
+// Start
+- (void)startTask:(ZDDownloadTask *)task;
+- (void)startTaskAtIndex:(NSUInteger)index;
+- (void)startAllTasks;
+
+// Stop
+- (void)stopTask:(ZDDownloadTask *)task;
+- (void)stopTaskAtIndex:(NSUInteger)index;
+- (void)stapAllTasks;
+
+// Remove
+- (void)removeTask:(ZDDownloadTask *)task;
+- (void)removeTaskAtIndex:(NSUInteger)index;
+- (void)removeAllTasks;
+
+@end

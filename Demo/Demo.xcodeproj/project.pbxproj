@@ -1,0 +1,335 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		76A3B46416AED72800162F42 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A3B46316AED72800162F42 /* UIKit.framework */; };
+		76A3B46616AED72800162F42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A3B46516AED72800162F42 /* Foundation.framework */; };
+		76A3B46816AED72800162F42 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A3B46716AED72800162F42 /* CoreGraphics.framework */; };
+		76A3B46E16AED72800162F42 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76A3B46C16AED72800162F42 /* InfoPlist.strings */; };
+		76A3B47016AED72800162F42 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A3B46F16AED72800162F42 /* main.m */; };
+		76A3B47416AED72800162F42 /* ZDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A3B47316AED72800162F42 /* ZDAppDelegate.m */; };
+		76A3B47616AED72800162F42 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 76A3B47516AED72800162F42 /* Default.png */; };
+		76A3B47816AED72800162F42 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76A3B47716AED72800162F42 /* Default@2x.png */; };
+		76A3B47A16AED72800162F42 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76A3B47916AED72800162F42 /* Default-568h@2x.png */; };
+		76A3B49916AEDDCC00162F42 /* ZDDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A3B49716AEDDCB00162F42 /* ZDDemoViewController.m */; };
+		76A3B49A16AEDDCC00162F42 /* ZDDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76A3B49816AEDDCC00162F42 /* ZDDemoViewController.xib */; };
+		76A3B49C16AEDE1E00162F42 /* ZDDemoViewController~iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76A3B49B16AEDE1E00162F42 /* ZDDemoViewController~iPad.xib */; };
+		76A3B4A416AEDEA200162F42 /* ZDDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A3B49F16AEDEA200162F42 /* ZDDownloadManager.m */; };
+		76A3B4A516AEDEA200162F42 /* ZDDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A3B4A116AEDEA200162F42 /* ZDDownloadOperation.m */; };
+		76A3B4AC16AEFC3A00162F42 /* ZDDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A3B4AB16AEFC3900162F42 /* ZDDownloadTask.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		76A3B45F16AED72800162F42 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		76A3B46316AED72800162F42 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		76A3B46516AED72800162F42 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		76A3B46716AED72800162F42 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		76A3B46B16AED72800162F42 /* Demo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Demo-Info.plist"; sourceTree = "<group>"; };
+		76A3B46D16AED72800162F42 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		76A3B46F16AED72800162F42 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		76A3B47116AED72800162F42 /* Demo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Demo-Prefix.pch"; sourceTree = "<group>"; };
+		76A3B47216AED72800162F42 /* ZDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDAppDelegate.h; sourceTree = "<group>"; };
+		76A3B47316AED72800162F42 /* ZDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDAppDelegate.m; sourceTree = "<group>"; };
+		76A3B47516AED72800162F42 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		76A3B47716AED72800162F42 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		76A3B47916AED72800162F42 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		76A3B49616AEDDCB00162F42 /* ZDDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDemoViewController.h; sourceTree = "<group>"; };
+		76A3B49716AEDDCB00162F42 /* ZDDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDemoViewController.m; sourceTree = "<group>"; };
+		76A3B49816AEDDCC00162F42 /* ZDDemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDDemoViewController.xib; sourceTree = "<group>"; };
+		76A3B49B16AEDE1E00162F42 /* ZDDemoViewController~iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ZDDemoViewController~iPad.xib"; sourceTree = "<group>"; };
+		76A3B49E16AEDEA200162F42 /* ZDDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDownloadManager.h; sourceTree = "<group>"; };
+		76A3B49F16AEDEA200162F42 /* ZDDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDownloadManager.m; sourceTree = "<group>"; };
+		76A3B4A016AEDEA200162F42 /* ZDDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDownloadOperation.h; sourceTree = "<group>"; };
+		76A3B4A116AEDEA200162F42 /* ZDDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDownloadOperation.m; sourceTree = "<group>"; };
+		76A3B4A216AEDEA200162F42 /* ZDDownloadTaskDataDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDownloadTaskDataDefines.h; sourceTree = "<group>"; };
+		76A3B4AA16AEFC3900162F42 /* ZDDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDownloadTask.h; sourceTree = "<group>"; };
+		76A3B4AB16AEFC3900162F42 /* ZDDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDownloadTask.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		76A3B45C16AED72800162F42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76A3B46416AED72800162F42 /* UIKit.framework in Frameworks */,
+				76A3B46616AED72800162F42 /* Foundation.framework in Frameworks */,
+				76A3B46816AED72800162F42 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		76A3B45416AED72800162F42 = {
+			isa = PBXGroup;
+			children = (
+				76A3B46916AED72800162F42 /* Demo */,
+				76A3B46216AED72800162F42 /* Frameworks */,
+				76A3B46016AED72800162F42 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		76A3B46016AED72800162F42 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				76A3B45F16AED72800162F42 /* Demo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		76A3B46216AED72800162F42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				76A3B46316AED72800162F42 /* UIKit.framework */,
+				76A3B46516AED72800162F42 /* Foundation.framework */,
+				76A3B46716AED72800162F42 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		76A3B46916AED72800162F42 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				76A3B49D16AEDEA200162F42 /* ZDDwonloadKit */,
+				76A3B4A616AEDEA600162F42 /* Classes */,
+				76A3B46A16AED72800162F42 /* Supporting Files */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		76A3B46A16AED72800162F42 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				76A3B46B16AED72800162F42 /* Demo-Info.plist */,
+				76A3B46C16AED72800162F42 /* InfoPlist.strings */,
+				76A3B46F16AED72800162F42 /* main.m */,
+				76A3B47116AED72800162F42 /* Demo-Prefix.pch */,
+				76A3B47516AED72800162F42 /* Default.png */,
+				76A3B47716AED72800162F42 /* Default@2x.png */,
+				76A3B47916AED72800162F42 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		76A3B49D16AEDEA200162F42 /* ZDDwonloadKit */ = {
+			isa = PBXGroup;
+			children = (
+				76A3B4A216AEDEA200162F42 /* ZDDownloadTaskDataDefines.h */,
+				76A3B4AA16AEFC3900162F42 /* ZDDownloadTask.h */,
+				76A3B4AB16AEFC3900162F42 /* ZDDownloadTask.m */,
+				76A3B49E16AEDEA200162F42 /* ZDDownloadManager.h */,
+				76A3B49F16AEDEA200162F42 /* ZDDownloadManager.m */,
+				76A3B4A016AEDEA200162F42 /* ZDDownloadOperation.h */,
+				76A3B4A116AEDEA200162F42 /* ZDDownloadOperation.m */,
+			);
+			name = ZDDwonloadKit;
+			path = ../../ZDDwonloadKit;
+			sourceTree = "<group>";
+		};
+		76A3B4A616AEDEA600162F42 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				76A3B47216AED72800162F42 /* ZDAppDelegate.h */,
+				76A3B47316AED72800162F42 /* ZDAppDelegate.m */,
+				76A3B49616AEDDCB00162F42 /* ZDDemoViewController.h */,
+				76A3B49716AEDDCB00162F42 /* ZDDemoViewController.m */,
+				76A3B49816AEDDCC00162F42 /* ZDDemoViewController.xib */,
+				76A3B49B16AEDE1E00162F42 /* ZDDemoViewController~iPad.xib */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		76A3B45E16AED72800162F42 /* Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76A3B48F16AED72800162F42 /* Build configuration list for PBXNativeTarget "Demo" */;
+			buildPhases = (
+				76A3B45B16AED72800162F42 /* Sources */,
+				76A3B45C16AED72800162F42 /* Frameworks */,
+				76A3B45D16AED72800162F42 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Demo;
+			productName = Demo;
+			productReference = 76A3B45F16AED72800162F42 /* Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		76A3B45616AED72800162F42 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ZD;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = 0day;
+			};
+			buildConfigurationList = 76A3B45916AED72800162F42 /* Build configuration list for PBXProject "Demo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 76A3B45416AED72800162F42;
+			productRefGroup = 76A3B46016AED72800162F42 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				76A3B45E16AED72800162F42 /* Demo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		76A3B45D16AED72800162F42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76A3B46E16AED72800162F42 /* InfoPlist.strings in Resources */,
+				76A3B47616AED72800162F42 /* Default.png in Resources */,
+				76A3B47816AED72800162F42 /* Default@2x.png in Resources */,
+				76A3B47A16AED72800162F42 /* Default-568h@2x.png in Resources */,
+				76A3B49A16AEDDCC00162F42 /* ZDDemoViewController.xib in Resources */,
+				76A3B49C16AEDE1E00162F42 /* ZDDemoViewController~iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		76A3B45B16AED72800162F42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76A3B47016AED72800162F42 /* main.m in Sources */,
+				76A3B47416AED72800162F42 /* ZDAppDelegate.m in Sources */,
+				76A3B49916AEDDCC00162F42 /* ZDDemoViewController.m in Sources */,
+				76A3B4A416AEDEA200162F42 /* ZDDownloadManager.m in Sources */,
+				76A3B4A516AEDEA200162F42 /* ZDDownloadOperation.m in Sources */,
+				76A3B4AC16AEFC3A00162F42 /* ZDDownloadTask.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		76A3B46C16AED72800162F42 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				76A3B46D16AED72800162F42 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		76A3B48D16AED72800162F42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		76A3B48E16AED72800162F42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		76A3B49016AED72800162F42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
+				INFOPLIST_FILE = "Demo/Demo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		76A3B49116AED72800162F42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
+				INFOPLIST_FILE = "Demo/Demo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		76A3B45916AED72800162F42 /* Build configuration list for PBXProject "Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76A3B48D16AED72800162F42 /* Debug */,
+				76A3B48E16AED72800162F42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76A3B48F16AED72800162F42 /* Build configuration list for PBXNativeTarget "Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76A3B49016AED72800162F42 /* Debug */,
+				76A3B49116AED72800162F42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 76A3B45616AED72800162F42 /* Project object */;
+}
