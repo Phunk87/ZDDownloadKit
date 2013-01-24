@@ -14,6 +14,11 @@
     return [[[self alloc] init] autorelease];
 }
 
+- (void)dealloc {
+    self.operation = nil;
+    [super dealloc];
+}
+
 - (void)startTask {}
 - (void)stopTask {}
 

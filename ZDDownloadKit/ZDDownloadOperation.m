@@ -15,6 +15,7 @@
     self = [super init];
     if (self) {
         self.task = task;
+        task.operation = self;
     }
     
     return self;

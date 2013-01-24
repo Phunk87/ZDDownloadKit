@@ -22,6 +22,7 @@
 		76A3B4C216AFC33900162F42 /* ZDDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A3B4BC16AFC33900162F42 /* ZDDownloadManager.m */; };
 		76A3B4C316AFC33900162F42 /* ZDDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A3B4BE16AFC33900162F42 /* ZDDownloadOperation.m */; };
 		76A3B4C416AFC33900162F42 /* ZDDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A3B4C016AFC33900162F42 /* ZDDownloadTask.m */; };
+		76A3B87716AFEFE500162F42 /* ZDSingleThreadDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A3B87616AFEFE500162F42 /* ZDSingleThreadDownloadTask.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,8 @@
 		76A3B4BF16AFC33900162F42 /* ZDDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDownloadTask.h; sourceTree = "<group>"; };
 		76A3B4C016AFC33900162F42 /* ZDDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDownloadTask.m; sourceTree = "<group>"; };
 		76A3B4C116AFC33900162F42 /* ZDDownloadTaskDataDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDownloadTaskDataDefines.h; sourceTree = "<group>"; };
+		76A3B87516AFEFE500162F42 /* ZDSingleThreadDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSingleThreadDownloadTask.h; sourceTree = "<group>"; };
+		76A3B87616AFEFE500162F42 /* ZDSingleThreadDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSingleThreadDownloadTask.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,7 @@
 		76A3B45416AED72800162F42 = {
 			isa = PBXGroup;
 			children = (
+				76A3B4BA16AFC33900162F42 /* ZDDownloadKit */,
 				76A3B46916AED72800162F42 /* Demo */,
 				76A3B46216AED72800162F42 /* Frameworks */,
 				76A3B46016AED72800162F42 /* Products */,
@@ -95,7 +99,6 @@
 		76A3B46916AED72800162F42 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				76A3B4BA16AFC33900162F42 /* ZDDownloadKit */,
 				76A3B4A616AEDEA600162F42 /* Classes */,
 				76A3B46A16AED72800162F42 /* Supporting Files */,
 			);
@@ -138,10 +141,12 @@
 				76A3B4BE16AFC33900162F42 /* ZDDownloadOperation.m */,
 				76A3B4BF16AFC33900162F42 /* ZDDownloadTask.h */,
 				76A3B4C016AFC33900162F42 /* ZDDownloadTask.m */,
+				76A3B87516AFEFE500162F42 /* ZDSingleThreadDownloadTask.h */,
+				76A3B87616AFEFE500162F42 /* ZDSingleThreadDownloadTask.m */,
 				76A3B4C116AFC33900162F42 /* ZDDownloadTaskDataDefines.h */,
 			);
 			name = ZDDownloadKit;
-			path = ../../ZDDownloadKit;
+			path = ../ZDDownloadKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +223,7 @@
 				76A3B4C216AFC33900162F42 /* ZDDownloadManager.m in Sources */,
 				76A3B4C316AFC33900162F42 /* ZDDownloadOperation.m in Sources */,
 				76A3B4C416AFC33900162F42 /* ZDDownloadTask.m in Sources */,
+				76A3B87716AFEFE500162F42 /* ZDSingleThreadDownloadTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
