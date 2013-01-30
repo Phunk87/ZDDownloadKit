@@ -141,7 +141,17 @@
 #pragma mark - Private
 - (NSString *)_defaultCacheDirectory {
     NSString *defaultDownloadPath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    return [defaultDownloadPath stringByAppendingPathComponent:@"Downloads"];
+    NSString *defaultCacheDirectory = [defaultDownloadPath stringByAppendingPathComponent:@"Downloads"];
+    
+    BOOL isDirectory = NO;
+    BOOL isExist = [[NSFileManager defaultManager] fileExistsAtPath:defaultCacheDirectory isDirectory:&isDirectory];
+    if (!isExist || (isExist && !isDirectory)) {
+        [[NSFileManager defaultManager] createDirectoryAtPath:defaultCacheDirectory
+                                  withIntermediateDirectories:YES
+                                                   attributes:nil
+                                                        error:nil];
+    }
+    return defaultCacheDirectory;
 }
 
 - (void)_persistentCacheData {
