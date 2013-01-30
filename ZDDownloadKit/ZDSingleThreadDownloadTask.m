@@ -18,7 +18,7 @@
 @interface ZDSingleThreadDownloadTask (Private)
 - (NSString *)_defaultCacheDirectory;
 - (void)_persistentCacheData;
-- (void)_setState:(ZDDownloadTaskState)state;
+- (void)_finishPersistentCacheData;
 @end
 
 @implementation ZDSingleThreadDownloadTask
@@ -131,6 +131,8 @@
         self.cachedData = nil;
     }
     
+    [self _finishPersistentCacheData];
+    
     self.state = kZDDownloadTaskStateDownloaded;
 }
 
@@ -165,6 +167,16 @@
     }
     
     self.cachedData = [NSMutableData data];
+}
+
+- (void)_finishPersistentCacheData {
+    NSString *fileName = [[self.url pathComponents] lastObject];;
+    NSString *defaultCacheDirectory = [self _defaultCacheDirectory];
+    NSString *finalFilePath = [defaultCacheDirectory stringByAppendingPathComponent:fileName];
+    
+    [[NSFileManager defaultManager] moveItemAtPath:self.cachePath
+                                            toPath:finalFilePath
+                                             error:nil];
 }
 
 @end
