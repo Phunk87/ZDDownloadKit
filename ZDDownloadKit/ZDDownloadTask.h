@@ -14,15 +14,14 @@
  */
 @interface ZDDownloadTask : NSObject
 <
-NSURLConnectionDataDelegate
+NSURLConnectionDataDelegate,
+NSURLConnectionDelegate
 >
 
 @property (nonatomic, retain) NSOperation *operation;
 
-@property (nonatomic, readonly) ZDDownloadTaskState state;
-@property (nonatomic, readonly) float progress;
-
-+ (ZDDownloadTask *)task;
+@property (nonatomic, assign) ZDDownloadTaskState state;
+@property (nonatomic, assign) float progress;
 
 // Base operation
 - (void)startTask;

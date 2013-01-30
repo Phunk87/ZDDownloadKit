@@ -9,6 +9,8 @@
 #import "ZDDownloadManager.h"
 #import "ZDDownloadTaskDataDefines.h"
 
+#define kDefaultMaxConcurrentDownloadingCount   3
+
 @interface ZDDownloadManager ()
 @property (nonatomic, retain) NSOperationQueue  *downloadQueue;
 @property (nonatomic, retain) NSMutableArray *taskList;
@@ -31,7 +33,10 @@
 - (id)init {
     self = [super init];
     if (self) {
+        self.maxConcurrentDownloadingCount = kDefaultMaxConcurrentDownloadingCount;
+        
         self.downloadQueue = [[[NSOperationQueue alloc] init] autorelease];
+        self.downloadQueue.maxConcurrentOperationCount = self.maxConcurrentDownloadingCount;
         
         self.taskList = [[[NSMutableArray alloc] init] autorelease];
     }
@@ -112,6 +117,15 @@
     for (ZDDownloadTask * task in self.taskList) {
         [self removeTask:task];
     }
+}
+
+#pragma mark - Access
+- (ZDDownloadTask *)taskAtIndex:(NSUInteger)index {
+    return [self.taskList objectAtIndex:index];
+}
+
+- (NSUInteger)indexOfTask:(ZDDownloadTask *)task {
+    return [self.taskList indexOfObject:task];
 }
 
 @end

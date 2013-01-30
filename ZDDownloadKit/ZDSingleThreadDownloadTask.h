@@ -12,7 +12,7 @@
 
 @property (nonatomic, copy) NSURL *url;
 
-@property (nonatomic, assign) NSUInteger maxCacheSize;
+@property (nonatomic, assign) NSUInteger maxCacheSize;  // Default: 512K
 @property (nonatomic, copy) NSString   *cachePath;      // Default: ~/Library/Caches/Downloads/.${[[url pathComponents] lastObject]}.downloading
 
 + (ZDSingleThreadDownloadTask *)taskWithURL:(NSURL *)url;

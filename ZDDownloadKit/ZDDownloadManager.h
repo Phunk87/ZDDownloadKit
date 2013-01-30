@@ -12,7 +12,7 @@
 
 @interface ZDDownloadManager : NSObject
 
-@property (nonatomic, assign) NSUInteger maxConcurrentDownloadingCount;
+@property (nonatomic, assign) NSUInteger maxConcurrentDownloadingCount;     // Default: 3
 @property (nonatomic, readonly) NSUInteger downloadTaskCount;
 
 + (ZDDownloadManager *)defaultManager;
@@ -34,5 +34,9 @@
 - (void)removeTask:(ZDDownloadTask *)task;
 - (void)removeTaskAtIndex:(NSUInteger)index;
 - (void)removeAllTasks;
+
+// Access
+- (ZDDownloadTask *)taskAtIndex:(NSUInteger)index;
+- (NSUInteger)indexOfTask:(ZDDownloadTask *)task;
 
 @end
