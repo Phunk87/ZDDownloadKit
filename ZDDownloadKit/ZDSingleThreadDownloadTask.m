@@ -18,7 +18,6 @@
 @interface ZDSingleThreadDownloadTask (Private)
 - (NSString *)_defaultCacheDirectory;
 - (void)_persistentCacheData;
-- (void)_setState:(ZDDownloadTaskState)state;
 @end
 
 @implementation ZDSingleThreadDownloadTask
