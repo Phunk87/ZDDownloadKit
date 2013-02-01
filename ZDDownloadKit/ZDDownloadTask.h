@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ZDDownloadTaskDataDefines.h"
+#import "ZDDownloadOperation.h"
 
 /*!
  这是一个基类，需要继承使用
@@ -18,7 +19,7 @@ NSURLConnectionDataDelegate,
 NSURLConnectionDelegate
 >
 
-@property (nonatomic, retain) NSOperation *operation;
+@property (nonatomic, assign) ZDDownloadOperation *operation;
 
 @property (nonatomic, assign) ZDDownloadTaskState state;
 @property (nonatomic, assign) float progress;

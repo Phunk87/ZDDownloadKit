@@ -9,7 +9,11 @@
 #import "ZDDownloadOperation.h"
 #import "ZDDownloadTask.h"
 
-@implementation ZDDownloadOperation
+@implementation ZDDownloadOperation {
+    BOOL _isExecuting;
+    BOOL _isFinished;
+    BOOL _isCancelled;
+}
 
 - (id)initWithTask:(ZDDownloadTask *)task {
     self = [super init];
@@ -45,20 +49,41 @@
 
 - (BOOL)isExecuting {
     ZDDownloadTaskState state = self.task.state;
-    return (state == kZDDownloadTaskStateDownloading);
+    BOOL isExecuting = (state == kZDDownloadTaskStateDownloading);
+    
+    if (_isExecuting != isExecuting) {
+        [self willChangeValueForKey:@"isExecuting"];
+        _isExecuting = isExecuting;
+        [self didChangeValueForKey:@"isExecuting"];
+    }
+    return _isExecuting;
 }
 
 - (BOOL)isFinished {
     ZDDownloadTaskState state = self.task.state;
-    return (kZDDownloadTaskStateDownloaded == state ||
-            kZDDownloadTaskStateFailed == state ||
-            kZDDownloadTaskStatePaused == state);
+    BOOL isFinished = (kZDDownloadTaskStateDownloaded == state ||
+                       kZDDownloadTaskStateFailed == state ||
+                       kZDDownloadTaskStatePaused == state);
+    
+    if (_isFinished != isFinished) {
+        [self willChangeValueForKey:@"isFinished"];
+        _isFinished = isFinished;
+        [self didChangeValueForKey:@"isFinished"];
+    }
+    return _isFinished;
 }
 
 - (BOOL)isCancelled {
     ZDDownloadTaskState state = self.task.state;
-    return (kZDDownloadTaskStatePaused == state ||
-            kZDDownloadTaskStateFailed == state);
+    BOOL isCancelled = (kZDDownloadTaskStatePaused == state ||
+                        kZDDownloadTaskStateFailed == state);
+    
+    if (_isCancelled != isCancelled) {
+        [self willChangeValueForKey:@"isCancelled"];
+        _isCancelled = isCancelled;
+        [self didChangeValueForKey:@"isCancelled"];
+    }
+    return _isCancelled;
 }
 
 @end

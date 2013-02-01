@@ -11,7 +11,7 @@
 @class ZDDownloadTask;
 @interface ZDDownloadOperation : NSOperation
 
-@property (nonatomic, assign) ZDDownloadTask *task;
+@property (nonatomic, retain) ZDDownloadTask *task;
 
 - (id)initWithTask:(ZDDownloadTask *)task;
 
