@@ -10,6 +10,7 @@
 #import "ZDDownloadTaskDataDefines.h"
 
 #define kDefaultMaxConcurrentDownloadingCount   3
+#define kDefaultRemoveTaskWhenCompletionEnabled YES
 
 @interface ZDDownloadManager ()
 @property (nonatomic, retain) NSOperationQueue  *downloadQueue;
@@ -34,6 +35,7 @@
     self = [super init];
     if (self) {
         self.maxConcurrentDownloadingCount = kDefaultMaxConcurrentDownloadingCount;
+        self.isRemoveTaskWhenCompletionEnabled = kDefaultRemoveTaskWhenCompletionEnabled;
         
         self.downloadQueue = [[[NSOperationQueue alloc] init] autorelease];
         self.downloadQueue.maxConcurrentOperationCount = self.maxConcurrentDownloadingCount;
@@ -68,6 +70,11 @@
 - (void)startTask:(ZDDownloadTask *)task {
     @autoreleasepool {
         ZDDownloadOperation *operation = [[[ZDDownloadOperation alloc] initWithTask:task] autorelease];
+        [task.operation addObserver:self
+                         forKeyPath:@"isFinished"
+                            options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
+                            context:nil];
+        
         [self.downloadQueue addOperation:operation];
     }
 }
@@ -104,7 +111,13 @@
 
 #pragma mark - Remove
 - (void)removeTask:(ZDDownloadTask *)task {
-    [self stopTask:task];
+    if (kZDDownloadTaskStateDownloading == task.state ||
+        kZDDownloadTaskStateWaiting == task.state) {
+        [self stopTask:task];
+    }
+    
+    [task.operation removeObserver:self
+                        forKeyPath:@"isFinished"];
     [self.taskList removeObject:task];
 }
 
@@ -126,6 +139,25 @@
 
 - (NSUInteger)indexOfTask:(ZDDownloadTask *)task {
     return [self.taskList indexOfObject:task];
+}
+
+#pragma mark - KVO
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([object isKindOfClass:[NSOperation class]]) {
+        if ([keyPath isEqualToString:@"isFinished"] &&
+            self.isRemoveTaskWhenCompletionEnabled) {
+            BOOL isFinished = [[change valueForKey:NSKeyValueChangeNewKey] boolValue];
+            
+            if (isFinished) {
+                for (ZDDownloadTask * task in self.taskList) {
+                    if (task.operation == object) {
+                        [self removeTask:task];
+                        break;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @end
