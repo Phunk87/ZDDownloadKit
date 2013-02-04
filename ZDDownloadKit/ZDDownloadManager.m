@@ -12,9 +12,19 @@
 #define kDefaultMaxConcurrentDownloadingCount   3
 #define kDefaultRemoveTaskWhenCompletionEnabled YES
 
+#define KeyDownloadArchive          @"key.downloadArchive"
+
+#define downloadArchivePlistPath    @"~/Documents/zddownload.plist"
+
 @interface ZDDownloadManager ()
 @property (nonatomic, retain) NSOperationQueue  *downloadQueue;
 @property (nonatomic, retain) NSMutableArray *taskList;
+@property (nonatomic, copy) NSString *archivePath;
+@end
+
+@interface ZDDownloadManager (Private)
+- (void)_readFromDisk;
+- (void)_writeToDisk;
 @end
 
 @implementation ZDDownloadManager
@@ -26,6 +36,7 @@
     
     dispatch_once(&onceToken, ^{
         s_manager = [[self alloc] init];
+        [s_manager _readFromDisk];
     });
     
     return s_manager;
@@ -57,9 +68,15 @@
     return [self.taskList count];
 }
 
+- (NSString *)archivePath {
+    NSString *path = [downloadArchivePlistPath stringByExpandingTildeInPath];
+    return path;
+}
+
 #pragma mark - Add
 - (void)addTask:(ZDDownloadTask *)task startImmediately:(BOOL)start {
     [self.taskList addObject:task];
+    [self _writeToDisk];
     
     if (start) {
         [self startTask:task];
@@ -74,8 +91,14 @@
                          forKeyPath:@"isFinished"
                             options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
                             context:nil];
+        [task addObserver:self
+               forKeyPath:@"progress"
+                  options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
+                  context:nil];
         
         [self.downloadQueue addOperation:operation];
+        
+        [self _writeToDisk];
     }
 }
 
@@ -95,6 +118,8 @@
     if (kZDDownloadTaskStateDownloading == task.state) {
         [[task operation] cancel];
         [task setOperation:nil];
+        
+        [self _writeToDisk];
     }
 }
 
@@ -118,7 +143,12 @@
     
     [task.operation removeObserver:self
                         forKeyPath:@"isFinished"];
+    [task removeObserver:self
+              forKeyPath:@"progress"];
+    
     [self.taskList removeObject:task];
+    
+    [self _writeToDisk];
 }
 
 - (void)removeTaskAtIndex:(NSUInteger)index {
@@ -157,7 +187,51 @@
                 }
             }
         }
+    } else if ([object isKindOfClass:[ZDDownloadTask class]]) {
+        if ([keyPath isEqualToString:@"progress"]) {
+            [self _writeToDisk];
+        }
     }
+}
+
+#pragma mark - Private
+- (void)_readFromDisk {
+    [self.downloadQueue cancelAllOperations];
+    [self.taskList removeAllObjects];
+    
+    NSString *archiverFilePath = self.archivePath;
+    if ([[NSFileManager defaultManager] fileExistsAtPath:archiverFilePath]) {
+        NSData *data = [NSData dataWithContentsOfFile:archiverFilePath];
+        NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
+        NSArray *savedTaskList = [unarchiver decodeObjectForKey:KeyDownloadArchive];
+        [unarchiver finishDecoding];
+        
+        [self.taskList addObjectsFromArray:savedTaskList];
+        
+        [unarchiver release];
+    }
+    
+    for (ZDDownloadTask *task in self.taskList) {
+        if (kZDDownloadTaskStateDownloaded != task.state) {
+            [self startTask:task];
+        }
+    }
+}
+
+- (void)_writeToDisk {
+    NSString *archiverFilePath = self.archivePath;
+    
+    NSMutableData *archiveData = [[NSMutableData alloc] init];
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:archiveData];
+    NSArray *taskListToSave = [self.taskList copy];
+    [archiver encodeObject:taskListToSave forKey:KeyDownloadArchive];
+    [archiver finishEncoding];
+    
+    [archiveData writeToFile:archiverFilePath atomically:YES];
+    
+    [taskListToSave release];
+    [archiveData release];
+    [archiver release];
 }
 
 @end
