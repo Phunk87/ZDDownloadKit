@@ -16,7 +16,9 @@
 @interface ZDDownloadTask : NSObject
 <
 NSURLConnectionDataDelegate,
-NSURLConnectionDelegate
+NSURLConnectionDelegate,
+NSCoding,
+NSCopying
 >
 
 @property (nonatomic, assign) ZDDownloadOperation *operation;

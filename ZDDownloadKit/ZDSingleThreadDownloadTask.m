@@ -8,6 +8,10 @@
 
 #import "ZDSingleThreadDownloadTask.h"
 
+#define KeySingleThreadDownloadURL              @"key.singleThreadDownloadURL"
+#define KeySingleThreadDownloadMaxCacheSize     @"key.singleThreadDownloadMaxCacheSize"
+#define KeySingleThreadDownloadCachePath        @"key.singleThreadDownloadCachePath"
+
 @interface ZDSingleThreadDownloadTask ()
 @property (nonatomic, retain) NSURLConnection   *connection;
 @property (nonatomic, retain) NSMutableData     *cachedData;
@@ -76,6 +80,36 @@
     self.state = kZDDownloadTaskStatePaused;
     
     [self.connection cancel];
+}
+
+#pragma mark - NSCoding
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [super encodeWithCoder:aCoder];
+    
+    [aCoder encodeObject:_url forKey:KeySingleThreadDownloadURL];
+    [aCoder encodeInteger:_maxCacheSize forKey:KeySingleThreadDownloadMaxCacheSize];
+    [aCoder encodeObject:_cachePath forKey:KeySingleThreadDownloadCachePath];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.url = [aDecoder decodeObjectForKey:KeySingleThreadDownloadURL];
+        self.maxCacheSize = [aDecoder decodeIntegerForKey:KeySingleThreadDownloadMaxCacheSize];
+        self.cachePath = [aDecoder decodeObjectForKey:KeySingleThreadDownloadCachePath];
+    }
+    
+    return self;
+}
+
+#pragma mark - NSCopying
+- (id)copyWithZone:(NSZone *)zone {
+    ZDSingleThreadDownloadTask *copy = [[self class] allocWithZone:zone];
+    copy.url = [[self.url copyWithZone:zone] autorelease];
+    copy.maxCacheSize = self.maxCacheSize;
+    copy.cachePath = [self.cachePath copyWithZone:zone];
+    
+    return copy;
 }
 
 #pragma mark - NSURLConnectionDataDelegate
