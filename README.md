@@ -29,7 +29,6 @@ ZDDownloadManager *downloadManager = [ZDDownloadManager defaultManager];
 
 ### Where to start
 If you wanna custom your own download task, you should start from ZDDownloadTask.  
-
 ZDDownloadTask is the Base Class of all task in ZDDownloadKit.  
 
 ### What to do
@@ -44,11 +43,11 @@ ZDDownloadTask is the Base Class of all task in ZDDownloadKit.
 * Make sure you set the state and progress value conform to your desire
 
 
-## Donate 捐赠
+## Donate
 
 You can donate me
 via:
-* [Alipay | 支付宝](https://me.alipay.com/0dayzh)
+* [Alipay](https://me.alipay.com/0dayzh)
 
 ## License
 This code is distributed under the terms of the GNU General Public License.
