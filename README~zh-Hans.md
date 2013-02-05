@@ -29,7 +29,6 @@ ZDDownloadManager *downloadManager = [ZDDownloadManager defaultManager];
 
 ### 从何开始
 如果你想定制自己的下载任务，你需要从ZDDownloadTask开始。
-
 ZDDownloadTask是所有ZDDownloadKit下载任务的基类。
 
 ### 该做些什么
@@ -47,8 +46,8 @@ ZDDownloadTask是所有ZDDownloadKit下载任务的基类。
 ## 捐赠
 
 您可以支持我
-via:
-* [Alipay | 支付宝](https://me.alipay.com/0dayzh)
+通过：
+* [支付宝](https://me.alipay.com/0dayzh)
 
 ## 许可协议
 代码使用 GNU General Public License 许可发布.
