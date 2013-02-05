@@ -28,18 +28,21 @@ ZDDownloadManager *downloadManager = [ZDDownloadManager defaultManager];
 
 ### Where to start 从何开始
 If you wanna custom your own download task, you should start from ZDDownloadTask.
+如果你想定制自己的下载任务，你需要从ZDDownloadTask开始。
 
 ZDDownloadTask is the Base Class of all task in ZDDownloadKit.
+ZDDownloadTask是所有ZDDownloadKit下载任务的基类。
 
 ### What to do 该做些什么
 
-* Inherit ZDDownloadTask
-* Implement the following two method
+* Inherit ZDDownloadTask 继承ZDDownloadTask
+* Implement the following two method 实现下面的两个方法
+
 ```
 - (void)startTask;
 - (void)stopTask;
 ```
-* Make sure you set the state and progress value conform to your desire
+* Make sure you set the state and progress value conform to your desire 确保state和progress按照你的意愿被设置
 
 ## Donate 捐赠
 
