@@ -3,6 +3,7 @@
 ZDDownloadKit is a light-weight download framework in iOS, which is scalable.
 ZDDownloadKit是一个用于iOS的轻量级下载framework，具有很高的可扩展性。
 
+
 ## Usage 使用
 
 ### Create a single-thread download task 创建一个单线程下载任务
@@ -24,13 +25,14 @@ ZDDownloadManager *downloadManager = [ZDDownloadManager defaultManager];
 [downloadManager addTask:task startImmediately:YES];
 ```
 
+
 ## Scalability 可扩展性
 
 ### Where to start 从何开始
-If you wanna custom your own download task, you should start from ZDDownloadTask.
+If you wanna custom your own download task, you should start from ZDDownloadTask.  
 如果你想定制自己的下载任务，你需要从ZDDownloadTask开始。
 
-ZDDownloadTask is the Base Class of all task in ZDDownloadKit.
+ZDDownloadTask is the Base Class of all task in ZDDownloadKit.  
 ZDDownloadTask是所有ZDDownloadKit下载任务的基类。
 
 ### What to do 该做些什么
@@ -43,6 +45,7 @@ ZDDownloadTask是所有ZDDownloadKit下载任务的基类。
 - (void)stopTask;
 ```
 * Make sure you set the state and progress value conform to your desire 确保state和progress按照你的意愿被设置
+
 
 ## Donate 捐赠
 
