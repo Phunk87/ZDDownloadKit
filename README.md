@@ -1,6 +1,6 @@
 # ZDDownloadKit
 
-ZDDownloadKit is a light-weight download framework in iOS, which is scalable.
+ZDDownloadKit is a light-weight download framework in iOS, which is scalable.  
 ZDDownloadKit是一个用于iOS的轻量级下载framework，具有很高的可扩展性。
 
 
