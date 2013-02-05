@@ -14,7 +14,7 @@
 
 #define KeyDownloadArchive          @"key.downloadArchive"
 
-#define downloadArchivePlistPath    @"~/Documents/zddownload.plist"
+#define downloadArchivePlistPath    @"~/Documents/.zddownload.plist"
 
 @interface ZDDownloadManager ()
 @property (nonatomic, retain) NSOperationQueue  *downloadQueue;
