@@ -48,6 +48,7 @@ ZDDownloadTask是所有ZDDownloadKit下载任务的基类。
 您可以支持我
 通过：
 * [支付宝](https://me.alipay.com/0dayzh)
+* 比特币 1DK98CTQ3hXb2j3VD7Tbz4v16ytZJhtPWv
 
 ## 许可协议
 代码使用 GNU General Public License 许可发布.
