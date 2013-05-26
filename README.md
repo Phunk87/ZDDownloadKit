@@ -48,6 +48,7 @@ ZDDownloadTask is the Base Class of all task in ZDDownloadKit.
 You can donate me
 via:
 * [Alipay](https://me.alipay.com/0dayzh)
+* Bitcoin: 1DK98CTQ3hXb2j3VD7Tbz4v16ytZJhtPWv
 
 ## License
 This code is distributed under the terms of the GNU General Public License.
